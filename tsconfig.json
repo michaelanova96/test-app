@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "paths": {
+      // workaround for: https://github.com/vitest-dev/vitest/issues/4567
+      "rollup/parseAst": ["./node_modules/rollup/dist/parseAst"]
+    },
+  },
+
+  "files": [],
+  "include": [
+    "*.ts",
+    "*.vue",
+    ".*.js",
+    ".*.ts",
+    ".*.vue",
+    "bin/**/*.js",
+    "bin/**/*.ts",
+    "bin/**/*.vue",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "./src/**/*.ts",
+    "./src/**/*.vue"
+  ],
+ 
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
