@@ -1,8 +1,6 @@
-import { defineStore } from "pinia";
-import { fetchCategoryProducts } from "../model/products";
-import { productSchema } from "@src/model/serializers/products";
-
-
+import { productSchema } from '@src/model/serializers/products';
+import { defineStore } from 'pinia';
+import { fetchCategoryProducts } from '../model/products';
 
 interface CategoryState {
   products: productSchema[];
@@ -10,16 +8,16 @@ interface CategoryState {
   error: Error | null;
 }
 
-export const useCategoryStore = defineStore("category", {
+export const useCategoryStore = defineStore('category', {
   state: (): CategoryState => ({
     products: [],
     loading: false,
-    error: null,
+    error: null
   }),
   getters: {
     getProducts(state) {
       return state.products;
-    },
+    }
   },
   actions: {
     async fetchProducts(categoryId: string) {
@@ -27,9 +25,9 @@ export const useCategoryStore = defineStore("category", {
         this.error = null;
         this.loading = true;
         const { data } = await fetchCategoryProducts({
-          categoryId,
+          categoryId
         });
-        
+
         console.log(data.products);
         this.products = data.products;
         console.log(data);
@@ -42,6 +40,6 @@ export const useCategoryStore = defineStore("category", {
       } finally {
         this.loading = false;
       }
-    },
-  },
+    }
+  }
 });

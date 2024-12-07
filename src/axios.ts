@@ -1,6 +1,5 @@
-import axios, { type AxiosResponse } from "axios";
-
-import { ignoreCase } from "./utils/ignore-case";
+import axios, { type AxiosResponse } from 'axios';
+import { ignoreCase } from './utils/ignore-case';
 
 const axiosInstance = axios.create();
 export { axiosInstance as axios };
@@ -12,9 +11,7 @@ export { axiosInstance as axios };
  *
  * @returns Axios response with deserialized data.
  */
-export async function zodParseAxiosResponse<
-  ZodSchema extends Zod.ZodType<any, any, any>,
->(
+export async function zodParseAxiosResponse<ZodSchema extends Zod.ZodType<unknown, unknown, unknown>>(
   responsePromise: Promise<AxiosResponse<unknown, unknown>>,
   zod: ZodSchema
 ): Promise<AxiosResponse<Zod.infer<ZodSchema>>> {
