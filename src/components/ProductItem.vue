@@ -11,11 +11,11 @@
             class="h-[300px] w-auto group-hover:scale-105 transition-all"
             :alt="product.name"
             :srcset="`
-        /test-app/images/products/${product.image} 400w,
-        /test-app/images/products/${product.image} 800w
-        /test-app/images/products/${product.image} 1600w`"
+        /images/products/${product.image} 400w,
+        /images/products/${product.image} 800w
+        /images/products/${product.image} 1600w`"
             :sizes="'(max-width: 150px) 200px, 400px, 800p'"
-            :src="`/test-app/images/products/${product.image}`"
+            :src="`/images/products/${product.image}`"
             fetchpriority="high"
           />
         </div>

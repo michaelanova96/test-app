@@ -7,7 +7,7 @@
     "dev": "vite",
     "lint": "eslint \"src/**/*.vue\" \"src/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.vue\" \"src/**/*.ts\"",
-    "build": "npm run lint && vite build --base=/test-app/",
+    "build": "npm run lint && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
